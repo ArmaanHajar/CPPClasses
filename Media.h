@@ -8,7 +8,7 @@ class Media{
   void setTitle();
   void setYear();
   int getMediaType();
-  char getTitle();
+  char* getTitle();
   int getYear();
 
   int mediaType;
