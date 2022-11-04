@@ -9,10 +9,10 @@ class Music:public Media{
   void setDuration();
   void setPublisher();
   char* getArtist();
-  float getDuration();
+  unsigned long getDuration();
   char* getPublisher();
 
   char artist[80];
-  float duration[80];
+  unsigned long duration;
   char publisher[80];
 };

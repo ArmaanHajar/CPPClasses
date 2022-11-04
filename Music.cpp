@@ -8,7 +8,7 @@ void Music::setArtist(char* artistTemp) {
   strncpy(artist, artistTemp, 79);
 }
 
-void Music::setDuration(float durationTemp) {
+void Music::setDuration(unsigned long durationTemp) {
   duration = durationTemp;
 }
 
@@ -20,7 +20,7 @@ char* Music::getArtist() {
   return artist;
 }
 
-float Music::getDuration() {
+unsigned long Music::getDuration() {
   return duration;
 }
 
