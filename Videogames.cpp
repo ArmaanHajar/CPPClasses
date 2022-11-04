@@ -5,7 +5,7 @@
 using namespace std;
 
 void Videogames::setPublisher(char* publisherTemp) {
-  publisher = publisherTemp;
+  strncpy(publisher, publisherTemp, 79);
 }
 
 void Videogames::getRating(int ratingTemp) {

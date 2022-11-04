@@ -5,7 +5,7 @@
 using namespace std;
 
 void Music::setArtist(char* artistTemp) {
-  artist = artistTemp;
+  strncpy(artist, artistTemp, 79);
 }
 
 void Music::setDuration(float durationTemp) {
@@ -13,7 +13,7 @@ void Music::setDuration(float durationTemp) {
 }
 
 void Music::setPublisher(char* publisherTemp) {
-  publisher = publisherTemp;
+  strncpy(publisher, publisherTemp, 79);
 }
 
 char* Music::getArtist() {
