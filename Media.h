@@ -1,3 +1,5 @@
+#ifndef MEDIA
+#define MEDIA
 #include <iostream>
 
 using namespace std;
@@ -12,3 +14,5 @@ class Media{
   char title[80];
   int year;
 };
+
+#endif
