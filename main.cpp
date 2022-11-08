@@ -1,7 +1,11 @@
 #include <iostream>
 #include <cstring>
+#include <vector>
+
 #include "Media.h"
 #include "Music.h"
+#include "Movies.h"
+#include "Videogames.h"
 
 using namespace std;
 
@@ -11,6 +15,7 @@ void searchElement();
 void deleteElement();
 
 int main() {
+  vector<Media*> mediaElements;
   char input[7];
   bool running = true;
 
@@ -52,7 +57,112 @@ void help() {
 }
 
 void addElement() {
-  cout << "You are attempting to add an element" << endl;
+  int mediaType;
+  bool done = false;
+  while (done == false) {
+    cout << "What Media Element Would You Like To Add? (1: Music, 2: Movie, 3: Video Game" << endl;
+    cin >> mediaType;
+
+    if (mediaType == 1) { // music
+      Music* music = new Music();
+
+      char title[80];
+      cout << "Enter Music Title:" << endl;
+      cin.get(title, 80);
+      cin.get();
+      music->setTitle(title);
+      
+      int year;
+      cout << "Enter Year Released" << endl;
+      cin >> year;
+      music->setYear(year);
+
+      char artist[80];
+      cout << "Enter Artist Name" << endl;
+      cin.get(artist, 80);
+      cin.get();
+      music->setArtist(artist);
+
+      unsigned long duration;
+      cout << "Enter Music Duration" << endl;
+      cin >> duration;
+      music->setDuration(duration);
+
+      char publisher[80];
+      cout << "Enter Publisher Name" << endl;
+      cin.get(publisher, 80);
+      cin.get();
+      music->setPublisher(publisher);
+      
+      done = true;
+    }
+    else if (mediaType == 2) { // movie
+      Movies* movie = new Movies();
+
+      char title[80];
+      cout << "Enter Movie Title:" << endl;
+      cin.get(title, 80);
+      cin.get();
+      movie->setTitle(title);
+      
+      int year;
+      cout << "Enter Year Released" << endl;
+      cin >> year;
+      movie->setYear(year);
+
+      char director[80];
+      cout << "Enter Director Name" << endl;
+      cin.get(director, 80);
+      cin.get();
+      movie->setDirector(director);
+
+      unsigned long duration;
+      cout << "Enter Music Duration" << endl;
+      cin >> duration;
+      movie->setDuration(duration);
+
+      int rating;
+      cout << "Enter Rating (Whole Number 0-10)" << endl;
+      cin >> rating;
+      if ((rating >= 0) && (rating <= 10)) {
+	movie->setRating(rating);
+      }
+	
+      done = true;
+    }
+    else if (mediaType == 3) { // video game
+      Videogames* vg = new Videogames();
+
+      char title[80];
+      cout << "Enter Video Game Title:" << endl;
+      cin.get(title, 80);
+      cin.get();
+      vg->setTitle(title);
+      
+      int year;
+      cout << "Enter Year Released" << endl;
+      cin >> year;
+      vg->setYear(year);
+
+      char publisher[80];
+      cout << "Enter Publisher Name" << endl;
+      cin.get(publisher, 80);
+      cin.get();
+      vg->setPublisher(publisher);
+
+      int rating;
+      cout << "Enter Rating (Whole Number 0-10)" << endl;
+      cin >> rating;
+      if ((rating >= 0) && (rating <= 10)) {
+	vg->setRating(rating);
+      }
+	
+      done = true;
+    }
+    else {
+      cout << "Not Sure What Media Element You're Trying To Input, Try Again" << endl;
+    }
+  }
 }
 
 void searchElement() {
