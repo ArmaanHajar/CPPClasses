@@ -6,8 +6,8 @@ using namespace std;
 
 class Media{
  public:
-  void setTitle();
-  void setYear();
+  void setTitle(char*);
+  void setYear(int);
   char* getTitle();
   int getYear();
 

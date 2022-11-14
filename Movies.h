@@ -5,9 +5,9 @@ using namespace std;
 
 class Movies:public Media{
 public:
-  void setDirector();
-  void setDuration();
-  void setRating();
+  void setDirector(char*);
+  void setDuration(unsigned long);
+  void setRating(int);
   char* getDirector();
   unsigned long getDuration();
   int getRating();

@@ -3,10 +3,10 @@
 
 using namespace std;
 
-class Videogames:public Media {
+class Videogames:public Media{
  public:
-  void setPublisher();
-  void setRating();
+  void setPublisher(char*);
+  void setRating(int);
   char* getPublisher();
   int getRating();
 

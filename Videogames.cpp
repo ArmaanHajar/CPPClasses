@@ -8,7 +8,7 @@ void Videogames::setPublisher(char* publisherTemp) {
   strncpy(publisher, publisherTemp, 79);
 }
 
-void Videogames::getRating(int ratingTemp) {
+void Videogames::setRating(int ratingTemp) {
   rating = ratingTemp;
 }
 

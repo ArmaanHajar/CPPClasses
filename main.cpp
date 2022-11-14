@@ -58,46 +58,46 @@ void help() {
 
 void addElement() {
   int mediaType;
-  bool done = false;
-  while (done == false) {
-    cout << "What Media Element Would You Like To Add? (1: Music, 2: Movie, 3: Video Game" << endl;
-    cin >> mediaType;
+  cout << "What Media Element Would You Like To Add? (1: Music, 2: Movie, 3: Video Game)" << endl;
+  cin >> mediaType;
 
-    if (mediaType == 1) { // music
-      Music* music = new Music();
+  if (mediaType == 1) { // music
+    Music* music = new Music();
 
-      char title[80];
-      cout << "Enter Music Title:" << endl;
-      cin.get(title, 80);
-      cin.get();
-      music->setTitle(title);
+    char title[80];
+    cout << "Enter Music Title:" << endl;
+    cin.get(title, 80);
+    cin.get();
+    music->setTitle(title);
       
-      int year;
-      cout << "Enter Year Released" << endl;
-      cin >> year;
-      music->setYear(year);
 
-      char artist[80];
-      cout << "Enter Artist Name" << endl;
-      cin.get(artist, 80);
-      cin.get();
-      music->setArtist(artist);
+    int year;
+    cout << "Enter Year Released:" << endl;
+    cin >> year;
+    music->setYear(year);
 
-      unsigned long duration;
-      cout << "Enter Music Duration" << endl;
-      cin >> duration;
-      music->setDuration(duration);
+    char artist[80];
+    cout << "Enter Artist Name:" << endl;
+    cin.get(artist, 80);
+    cin.get();
+    music->setArtist(artist);
 
-      char publisher[80];
-      cout << "Enter Publisher Name" << endl;
-      cin.get(publisher, 80);
-      cin.get();
-      music->setPublisher(publisher);
+    unsigned long duration;
+    cout << "Enter Music Duration:" << endl;
+    cin >> duration;
+    music->setDuration(duration);
+
+    char publisher[80];
+    cout << "Enter Publisher Name:" << endl;
+    cin.get(publisher, 80);
+    cin.get();
+    music->setPublisher(publisher);
       
-      done = true;
-    }
-    else if (mediaType == 2) { // movie
-      Movies* movie = new Movies();
+    done = true;
+  }
+
+  else if (mediaType == 2) { // movie
+    Movies* movie = new Movies();
 
       char title[80];
       cout << "Enter Movie Title:" << endl;
@@ -106,23 +106,23 @@ void addElement() {
       movie->setTitle(title);
       
       int year;
-      cout << "Enter Year Released" << endl;
+      cout << "Enter Year Released:" << endl;
       cin >> year;
       movie->setYear(year);
 
       char director[80];
-      cout << "Enter Director Name" << endl;
+      cout << "Enter Director Name:" << endl;
       cin.get(director, 80);
       cin.get();
       movie->setDirector(director);
 
       unsigned long duration;
-      cout << "Enter Music Duration" << endl;
+      cout << "Enter Music Duration:" << endl;
       cin >> duration;
       movie->setDuration(duration);
 
       int rating;
-      cout << "Enter Rating (Whole Number 0-10)" << endl;
+      cout << "Enter Rating (Whole Number 0-10):" << endl;
       cin >> rating;
       if ((rating >= 0) && (rating <= 10)) {
 	movie->setRating(rating);
@@ -140,18 +140,18 @@ void addElement() {
       vg->setTitle(title);
       
       int year;
-      cout << "Enter Year Released" << endl;
+      cout << "Enter Year Released:" << endl;
       cin >> year;
       vg->setYear(year);
 
       char publisher[80];
-      cout << "Enter Publisher Name" << endl;
+      cout << "Enter Publisher Name:" << endl;
       cin.get(publisher, 80);
       cin.get();
       vg->setPublisher(publisher);
 
       int rating;
-      cout << "Enter Rating (Whole Number 0-10)" << endl;
+      cout << "Enter Rating (Whole Number 0-10):" << endl;
       cin >> rating;
       if ((rating >= 0) && (rating <= 10)) {
 	vg->setRating(rating);
