@@ -8,7 +8,7 @@ void Movies::setDirector(char* directorTemp) {
   strncpy(director, directorTemp, 79);
 }
 
-void Movies::setDuration(unsigned long durationTemp) {
+void Movies::setDuration(int durationTemp) {
   duration = durationTemp;
 }
 
@@ -20,7 +20,7 @@ char* Movies::getDirector() {
   return director;
 }
 
-unsigned long Movies::getDuration() {
+int Movies::getDuration() {
   return duration;
 }
 

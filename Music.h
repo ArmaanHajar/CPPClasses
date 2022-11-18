@@ -6,13 +6,13 @@ using namespace std;
 class Music:public Media{
  public:
   void setArtist(char*);
-  void setDuration(unsigned long);
+  void setDuration(int);
   void setPublisher(char*);
   char* getArtist();
-  unsigned long getDuration();
+  int getDuration();
   char* getPublisher();
 
   char artist[80];
-  unsigned long duration;
+  int duration;
   char publisher[80];
 };

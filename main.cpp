@@ -24,7 +24,8 @@ int main() {
     cout << "---------------------------------------------------------" << endl;
     cout << "What Would You Like To Do? (ADD/SEARCH/DELETE/QUIT/HELP)" << endl;
 
-    cin >> input;
+    cin.get(input, 7);
+    cin.get();
 
     if (strcmp(input, "ADD") == 0) { // adds media element
       addElement();
@@ -42,7 +43,7 @@ int main() {
     else if (strcmp(input, "HELP") == 0) { // prints what each input does
       help();
     }
-    else { // if user doesn't typ add, print, delete, or quit
+    else { // if user doesn't type add, print, delete, or quit
       cout << "Not Sure What You're Trying To Do" << endl;
     }
   }  
@@ -57,11 +58,12 @@ void help() {
 }
 
 void addElement() {
-  int mediaType;
-  cout << "What Media Element Would You Like To Add? (1: Music, 2: Movie, 3: Video Game)" << endl;
-  cin >> mediaType;
-
-  if (mediaType == 1) { // music
+  char mediaType[15];
+  cout << "What Media Element Would You Like To Add? (Music, Movie, Video Game)" << endl;
+  cin.get(mediaType, 15);
+  cin.get();
+  
+  if (mediaType[1] == 'u') { // music
     Music* music = new Music();
 
     char title[80];
@@ -69,11 +71,11 @@ void addElement() {
     cin.get(title, 80);
     cin.get();
     music->setTitle(title);
-      
-
+    
     int year;
     cout << "Enter Year Released:" << endl;
     cin >> year;
+    cin.ignore(1, '\n');
     music->setYear(year);
 
     char artist[80];
@@ -82,86 +84,84 @@ void addElement() {
     cin.get();
     music->setArtist(artist);
 
-    unsigned long duration;
-    cout << "Enter Music Duration:" << endl;
+    int duration;
+    cout << "Enter Music Duration (in seconds):" << endl;
     cin >> duration;
+    cin.ignore(1, '\n');
     music->setDuration(duration);
 
     char publisher[80];
     cout << "Enter Publisher Name:" << endl;
     cin.get(publisher, 80);
-    cin.get();
+    cin.ignore(1, '\n');
     music->setPublisher(publisher);
-      
-    done = true;
   }
-
-  else if (mediaType == 2) { // movie
+  else if (mediaType[1] == 'o') { // movie
     Movies* movie = new Movies();
 
-      char title[80];
-      cout << "Enter Movie Title:" << endl;
-      cin.get(title, 80);
-      cin.get();
-      movie->setTitle(title);
+    char title[80];
+    cout << "Enter Movie Title:" << endl;
+    cin.get(title, 80);
+    cin.get();
+    movie->setTitle(title);
       
-      int year;
-      cout << "Enter Year Released:" << endl;
-      cin >> year;
-      movie->setYear(year);
+    int year;
+    cout << "Enter Year Released:" << endl;
+    cin >> year;
+    cin.ignore(1, '\n');
+    movie->setYear(year);
 
-      char director[80];
-      cout << "Enter Director Name:" << endl;
-      cin.get(director, 80);
-      cin.get();
-      movie->setDirector(director);
+    char director[80];
+    cout << "Enter Director Name:" << endl;
+    cin.get(director, 80);
+    cin.get();
+    movie->setDirector(director);
 
-      unsigned long duration;
-      cout << "Enter Music Duration:" << endl;
-      cin >> duration;
-      movie->setDuration(duration);
+    int duration;
+    cout << "Enter Music Duration (in minutes):" << endl;
+    cin >> duration;
+    cin.ignore(1, '\n');
+    movie->setDuration(duration);
 
-      int rating;
-      cout << "Enter Rating (Whole Number 0-10):" << endl;
-      cin >> rating;
-      if ((rating >= 0) && (rating <= 10)) {
-	movie->setRating(rating);
-      }
-	
-      done = true;
+    int rating;
+    cout << "Enter Rating (Whole Number 0-10):" << endl;
+    cin >> rating;
+    cin.ignore(1, '\n');
+    if ((rating >= 0) && (rating <= 10)) {
+      movie->setRating(rating);
     }
-    else if (mediaType == 3) { // video game
-      Videogames* vg = new Videogames();
+  }
+  else if (mediaType[1] == 'i') { // video game
+    Videogames* vg = new Videogames();
 
-      char title[80];
-      cout << "Enter Video Game Title:" << endl;
-      cin.get(title, 80);
-      cin.get();
-      vg->setTitle(title);
+    char title[80];
+    cout << "Enter Video Game Title:" << endl;
+    cin.get(title, 80);
+    cin.get();
+    vg->setTitle(title);
       
-      int year;
-      cout << "Enter Year Released:" << endl;
-      cin >> year;
-      vg->setYear(year);
+    int year;
+    cout << "Enter Year Released:" << endl;
+    cin >> year;
+    cin.ignore(1, '\n');
+    vg->setYear(year);
 
-      char publisher[80];
-      cout << "Enter Publisher Name:" << endl;
-      cin.get(publisher, 80);
-      cin.get();
-      vg->setPublisher(publisher);
+    char publisher[80];
+    cout << "Enter Publisher Name:" << endl;
+    cin.get(publisher, 80);
+    cin.get();
+    vg->setPublisher(publisher);
 
-      int rating;
-      cout << "Enter Rating (Whole Number 0-10):" << endl;
-      cin >> rating;
-      if ((rating >= 0) && (rating <= 10)) {
-	vg->setRating(rating);
-      }
-	
-      done = true;
+    int rating;
+    cout << "Enter Rating (Whole Number 0-10):" << endl;
+    cin >> rating;
+    cin.ignore(1, '\n');
+    if ((rating >= 0) && (rating <= 10)) {
+      vg->setRating(rating);
     }
-    else {
-      cout << "Not Sure What Media Element You're Trying To Input, Try Again" << endl;
-    }
+  }
+  else {
+    cout << "Not Sure What Media Element You're Trying To Input, Try Again" << endl;
   }
 }
 
