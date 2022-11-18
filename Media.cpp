@@ -19,3 +19,7 @@ char* Media::getTitle() {
 int Media::getYear() {
   return year;
 }
+
+virtual void Media::print() {
+  
+}

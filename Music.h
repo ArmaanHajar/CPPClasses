@@ -15,4 +15,5 @@ class Music:public Media{
   char artist[80];
   int duration;
   char publisher[80];
+  void print();
 };

@@ -10,9 +10,9 @@
 using namespace std;
 
 void help();
-void addElement();
-void searchElement();
-void deleteElement();
+void addElement(vector<Media*> &mediaElements);
+void searchElement(vector<Media*> &mediaElements);
+void deleteElement(vector<Media*> &mediaElements);
 
 int main() {
   vector<Media*> mediaElements;
@@ -28,13 +28,13 @@ int main() {
     cin.get();
 
     if (strcmp(input, "ADD") == 0) { // adds media element
-      addElement();
+      addElement(mediaElements);
     }
     else if (strcmp(input, "SEARCH") == 0) { // searches through all media elements
-      searchElement();
+      searchElement(mediaElements);
     }
     else if (strcmp(input, "DELETE") == 0) { // deletes a selected media element
-      deleteElement();
+      deleteElement(mediaElements);
     }
     else if (strcmp(input, "QUIT") == 0) { // ends program
       cout << "Thank You!" << endl;
@@ -57,7 +57,7 @@ void help() {
   cout << "Type \"QUIT\" To End Program" << endl;
 }
 
-void addElement() {
+void addElement(vector<Media*> &mediaElements) {
   char mediaType[15];
   cout << "What Media Element Would You Like To Add? (Music, Movie, Video Game)" << endl;
   cin.get(mediaType, 15);
@@ -95,6 +95,8 @@ void addElement() {
     cin.get(publisher, 80);
     cin.ignore(1, '\n');
     music->setPublisher(publisher);
+
+    mediaElements.push_back(music);
   }
   else if (mediaType[1] == 'o') { // movie
     Movies* movie = new Movies();
@@ -130,6 +132,8 @@ void addElement() {
     if ((rating >= 0) && (rating <= 10)) {
       movie->setRating(rating);
     }
+
+    mediaElements.push_back(movie);
   }
   else if (mediaType[1] == 'i') { // video game
     Videogames* vg = new Videogames();
@@ -159,16 +163,47 @@ void addElement() {
     if ((rating >= 0) && (rating <= 10)) {
       vg->setRating(rating);
     }
+
+    mediaElements.push_back(vg);
   }
   else {
     cout << "Not Sure What Media Element You're Trying To Input, Try Again" << endl;
   }
 }
 
-void searchElement() {
-  cout << "You are attempting to search an element" << endl;
+void searchElement(vector<Media*> &mediaElements) {
+  char mediaType[15];
+  char elementTitle[80];
+
+  cout << "What Media Type Are You Trying To Search? (Music, Movie, Video Game)" << endl;
+
+  if (mediaType[1] == 'u') { // music
+    cout << "What Is The Title Of The Song You'd Like To Search?" << endl;
+
+    cin.get(elementTitle, 80);
+    cin.get();
+
+    cout << "Title: " << title 
+  
+    for (int i = 0; i < mediaElements.size(); i++) {
+      if ((mediaElements.at(i)->title) == elementTitle) {
+	mediaElements.at(i)->print();
+      }
+      else {
+	cout << "This Song Was Never Inputted!" << endl;
+      }
+    }  
+  }
+  
+  else if (mediaType[1] == 'o') { // movie
+
+  }
+
+  else if (mediaType[1] == 'i') { // video game
+
+  }
 }
 
-void deleteElement() {
+void deleteElement(vector<Media*> &mediaElements) {
   cout << "You are attempting to delete an element" << endl;
 }
