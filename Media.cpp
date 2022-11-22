@@ -2,7 +2,9 @@
 #include <cstring>
 #include "Media.h"
 
-using namespace std; void Media::setTitle(char* titletemp) {
+using namespace std;
+
+void Media::setTitle(char* titletemp) {
   strncpy(title, titletemp, 79);
 }
 
@@ -18,4 +20,6 @@ int Media::getYear() {
   return year;
 }
 
-virtual void Media::print() {}
+virtual void Media::print() {
+  
+}

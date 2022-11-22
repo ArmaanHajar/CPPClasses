@@ -183,9 +183,17 @@ void searchElement(vector<Media*> &mediaElements) {
     cin.get(elementTitle, 80);
     cin.get();
 
+<<<<<<< HEAD
     for (int i = 0; i < mediaElements.size(); i++) {
       if ((mediaElements.at(i)->title) == elementTitle) {
 	      mediaElements.at(i)->print();
+=======
+    cout << "Title: " << title 
+  
+    for (int i = 0; i < mediaElements.size(); i++) {
+      if ((mediaElements.at(i)->title) == elementTitle) {
+	mediaElements.at(i)->print();
+>>>>>>> refs/remotes/origin/main
       }
       else {
 	cout << "This Song Was Never Inputted!" << endl;
