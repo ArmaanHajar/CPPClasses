@@ -1,17 +1,19 @@
+#ifndef MEDIA
+#define MEDIA
 #include <iostream>
 
 using namespace std;
 
 class Media{
  public:
-  void setMediaType();
-  void setTitle();
-  void setYear();
-  int getMediaType();
+  void setTitle(char*);
+  void setYear(int);
   char* getTitle();
   int getYear();
+  virtual void print();
 
-  int mediaType;
   char title[80];
   int year;
 };
+
+#endif

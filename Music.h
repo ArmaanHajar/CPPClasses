@@ -5,14 +5,15 @@ using namespace std;
 
 class Music:public Media{
  public:
-  void setArtist();
-  void setDuration();
-  void setPublisher();
+  void setArtist(char*);
+  void setDuration(int);
+  void setPublisher(char*);
   char* getArtist();
-  unsigned long getDuration();
+  int getDuration();
   char* getPublisher();
 
   char artist[80];
-  unsigned long duration;
+  int duration;
   char publisher[80];
+  void print();
 };

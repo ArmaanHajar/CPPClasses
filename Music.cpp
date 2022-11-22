@@ -8,7 +8,7 @@ void Music::setArtist(char* artistTemp) {
   strncpy(artist, artistTemp, 79);
 }
 
-void Music::setDuration(unsigned long durationTemp) {
+void Music::setDuration(int durationTemp) {
   duration = durationTemp;
 }
 
@@ -20,10 +20,18 @@ char* Music::getArtist() {
   return artist;
 }
 
-unsigned long Music::getDuration() {
+int Music::getDuration() {
   return duration;
 }
 
 char* Music::getPublisher() {
   return publisher;
+}
+
+void Music::print() {
+  cout << "Title: " << title << endl;
+  cout << "Artist: " << artist << endl;
+  cout << "Year: " << year << endl;
+  cout << "Duration (in seconds): " << duration << endl;
+  cout << "Publisher: " << publisher << endl;
 }
