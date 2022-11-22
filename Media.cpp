@@ -20,6 +20,6 @@ int Media::getYear() {
   return year;
 }
 
-virtual void Media::print() {
+void Media::print() {
   
 }

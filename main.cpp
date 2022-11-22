@@ -176,24 +176,19 @@ void searchElement(vector<Media*> &mediaElements) {
   char elementTitle[80];
 
   cout << "What Media Type Are You Trying To Search? (Music, Movie, Video Game)" << endl;
-
+  
+  cin.get(mediaType, 15);
+  cin.get();
+  
   if (mediaType[1] == 'u') { // music
     cout << "What Is The Title Of The Song You'd Like To Search?" << endl;
 
     cin.get(elementTitle, 80);
     cin.get();
 
-<<<<<<< HEAD
     for (int i = 0; i < mediaElements.size(); i++) {
-      if ((mediaElements.at(i)->title) == elementTitle) {
-	      mediaElements.at(i)->print();
-=======
-    cout << "Title: " << title 
-  
-    for (int i = 0; i < mediaElements.size(); i++) {
-      if ((mediaElements.at(i)->title) == elementTitle) {
+      if (strcmp((mediaElements.at(i)->title), elementTitle) == 0) {
 	mediaElements.at(i)->print();
->>>>>>> refs/remotes/origin/main
       }
       else {
 	cout << "This Song Was Never Inputted!" << endl;
@@ -202,14 +197,95 @@ void searchElement(vector<Media*> &mediaElements) {
   }
   
   else if (mediaType[1] == 'o') { // movie
+    cout << "What Is The Title Of The Movie You'd Like To Search?" << endl;
 
+    cin.get(elementTitle, 80);
+    cin.get();
+
+    for (int i = 0; i < mediaElements.size(); i++) {
+      if (strcmp((mediaElements.at(i)->title), elementTitle) == 0) {
+	mediaElements.at(i)->print();
+      }
+      else {
+	cout << "This Movie Was Never Inputted!" << endl;
+      }
+    }
   }
 
   else if (mediaType[1] == 'i') { // video game
+    cout << "What Is The Title Of The Video Game You'd Like To Search?" << endl;
 
+    cin.get(elementTitle, 80);
+    cin.get();
+
+    for (int i = 0; i < mediaElements.size(); i++) {
+      if (strcmp((mediaElements.at(i)->title), elementTitle) == 0) {
+	mediaElements.at(i)->print();
+      }
+      else {
+	cout << "This Video Game Was Never Inputted!" << endl;
+      }
+    }
   }
 }
 
 void deleteElement(vector<Media*> &mediaElements) {
-  cout << "You are attempting to delete an element" << endl;
+  char mediaType[15];
+  char elementTitle[80];
+
+  cout << "What Media Type Are You Trying To Delete? (Music, Movie, Video Game)" << endl;
+  
+  cin.get(mediaType, 15);
+  cin.get();
+  
+  if (mediaType[1] == 'u') { // music
+    cout << "What Is The Title Of The Song You'd Like To Delete?" << endl;
+
+    cin.get(elementTitle, 80);
+    cin.get();
+
+    for (int i = 0; i < mediaElements.size(); i++) {
+      if (strcmp((mediaElements.at(i)->title), elementTitle) == 0) {
+	mediaElements.pop_back();
+	cout << elementTitle << " Has Been Deleted" << endl;
+      }
+      else {
+	cout << "This Song Was Never Inputted!" << endl;
+      }
+    }  
+  }
+  
+  else if (mediaType[1] == 'o') { // movie
+    cout << "What Is The Title Of The Movie You'd Like To Delete?" << endl;
+
+    cin.get(elementTitle, 80);
+    cin.get();
+
+    for (int i = 0; i < mediaElements.size(); i++) {
+      if (strcmp((mediaElements.at(i)->title), elementTitle) == 0) {
+	mediaElements.pop_back();
+	cout << elementTitle << " Has Been Deleted" << endl;
+      }
+      else {
+	cout << "This Movie Was Never Inputted!" << endl;
+      }
+    }
+  }
+
+  else if (mediaType[1] == 'i') { // video game
+    cout << "What Is The Title Of The Video Game You'd Like To Delete?" << endl;
+
+    cin.get(elementTitle, 80);
+    cin.get();
+
+    for (int i = 0; i < mediaElements.size(); i++) {
+      if (strcmp((mediaElements.at(i)->title), elementTitle) == 0) {
+	mediaElements.pop_back();
+	cout << elementTitle << " Has Been Deleted" << endl;
+      }
+      else {
+	cout << "This Video Game Was Never Inputted!" << endl;
+      }
+    }
+  }
 }
