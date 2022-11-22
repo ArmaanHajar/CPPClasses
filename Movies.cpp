@@ -1,3 +1,9 @@
+/*
+ * Author: Armaan Hajar
+ * Description: Setters and getter for Movies
+ * Date: 11/22/2022
+ */
+
 #include <iostream>
 #include <cstring>
 #include "Movies.h"
@@ -28,7 +34,7 @@ int Movies::getRating() {
   return rating;
 }
 
-void Movies::print() {
+void Movies::print() { // prints out inputs for movie when called
   cout << "Title: " << title << endl;
   cout << "Director: " << director << endl;
   cout << "Year: " << year << endl;

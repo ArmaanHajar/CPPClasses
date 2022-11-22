@@ -1,3 +1,9 @@
+/*
+ * Author: Armaan Hajar
+ * Description: Defines settters, getters, and variables for media parent class
+ * Date: 11/22/2022
+ */
+
 #ifndef MEDIA
 #define MEDIA
 #include <iostream>

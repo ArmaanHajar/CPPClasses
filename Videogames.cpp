@@ -1,3 +1,9 @@
+/*
+ * Author: Armaan Hajar
+ * Description: Setters and getters for Videogames
+ * Date: 11/22/2022
+ */
+
 #include <iostream>
 #include <cstring>
 #include "Videogames.h"
@@ -20,7 +26,7 @@ int Videogames::getRating() {
   return rating;
 }
 
-void Videogames::print() {
+void Videogames::print() { // prints out inputs for video game when called
   cout << "Title: " << title << endl;
   cout << "Publisher: " << publisher << endl;
   cout << "Year: " << year << endl;

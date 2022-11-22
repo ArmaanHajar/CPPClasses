@@ -1,3 +1,9 @@
+/*
+ * Author: Armaan Hajar
+ * Description: Setters and getter for Music
+ * Date: 11/22/2022
+ */
+
 #include <iostream>
 #include <cstring>
 #include "Music.h"
@@ -28,8 +34,7 @@ char* Music::getPublisher() {
   return publisher;
 }
 
-void Music::print() {
-
+void Music::print() { // prints out the inputs for music when called
   cout << "Title: " << title << endl;
   cout << "Artist: " << artist << endl;
   cout << "Year: " << year << endl;

@@ -1,3 +1,9 @@
+/*
+ * Author: Armaan Hajar
+ * Description: Defines setters, getters, and variables for movie class
+ * Date: 11/22/2022
+ */
+
 #include <iostream>
 #include "Media.h"
 
