@@ -33,20 +33,20 @@ int main() {
     cin.get(input, 7);
     cin.get();
 
-    if (strcmp(input, "ADD") == 0) { // adds media element
+    if (input[0] == 'A' || input[0] == 'a') { // adds media element
       addElement(mediaElements);
     }
-    else if (strcmp(input, "SEARCH") == 0) { // searches a media element
+    else if (input[0] == 'S' || input[0] == 's') { // searches a media element
       searchElement(mediaElements);
     }
-    else if (strcmp(input, "DELETE") == 0) { // deletes a selected media element
+    else if (input[0] == 'D' || input[0] == 'd') { // deletes a selected media element
       deleteElement(mediaElements);
     }
-    else if (strcmp(input, "QUIT") == 0) { // ends program
+    else if (input[0] == 'Q' || input[0] == 'q') { // ends program
       cout << "Thank You!" << endl;
       running = false;
     }
-    else if (strcmp(input, "HELP") == 0) { // prints what each input does
+    else if (input[0] == 'H' || input[0] == 'h') { // prints what each input does
       help();
     }
     else { // if user doesn't type add, print, delete, or quit
@@ -136,7 +136,7 @@ void addElement(vector<Media*> &mediaElements) { // adds element to vector
 
     // adds duration
     int duration;
-    cout << "Enter Music Duration (in minutes):" << endl;
+    cout << "Enter Movie Duration (in minutes):" << endl;
     cin >> duration;
     cin.ignore(1, '\n');
     movie->setDuration(duration);
@@ -211,8 +211,8 @@ void searchElement(vector<Media*> &mediaElements) {
 	      cout << "---------------------------------------------------------" << endl;  
         mediaElements.at(i)->print();
       }
-      else { // if cant find song
-	      cout << "This Song Was Never Inputted!" << endl;
+      else if (strcmp((mediaElements.at(i)->title), elementTitle) != 0) { // if cant find song
+	cout << "This Song Was Never Inputted!" << endl;
       }
     }  
   }
@@ -229,7 +229,7 @@ void searchElement(vector<Media*> &mediaElements) {
       	cout << "---------------------------------------------------------" << endl;
         mediaElements.at(i)->print();
       }
-      else { // if cant find movie
+      else if (strcmp((mediaElements.at(i)->title), elementTitle) != 0) { // if cant find movie
       	cout << "This Movie Was Never Inputted!" << endl;
       }
     }
@@ -247,8 +247,8 @@ void searchElement(vector<Media*> &mediaElements) {
         cout << "---------------------------------------------------------" << endl;
       	mediaElements.at(i)->print();
       }
-      else { // if cant find video game
-	      cout << "This Video Game Was Never Inputted!" << endl;
+      else if (strcmp((mediaElements.at(i)->title), elementTitle) != 0) { // if cant find video game
+	cout << "This Video Game Was Never Inputted!" << endl;
       }
     }
   }
@@ -272,8 +272,8 @@ void deleteElement(vector<Media*> &mediaElements) {
     // goes through mediaElements vector looking for inputted title
     for (int i = 0; i < mediaElements.size(); i++) {
       if (strcmp((mediaElements.at(i)->title), elementTitle) == 0) { // if finds music
-        mediaElements.pop_back();
-        delete &mediaElements.at(i);
+        delete &(mediaElements.at(i));
+	mediaElements.pop_back();
         cout << elementTitle << " Has Been Deleted" << endl;
       }
       else { // if cant find music
@@ -291,7 +291,8 @@ void deleteElement(vector<Media*> &mediaElements) {
     // goes through mediaElements vector looking for inputted title
     for (int i = 0; i < mediaElements.size(); i++) {
       if (strcmp((mediaElements.at(i)->title), elementTitle) == 0) { // if finds movie
-        mediaElements.pop_back();
+        delete &(mediaElements.at(i));
+	mediaElements.pop_back();
         cout << elementTitle << " Has Been Deleted" << endl;
       }
       else { // if cant find movie
@@ -309,8 +310,9 @@ void deleteElement(vector<Media*> &mediaElements) {
     // goes through mediaElements vector looking for inputted title
     for (int i = 0; i < mediaElements.size(); i++) {
       if (strcmp((mediaElements.at(i)->title), elementTitle) == 0) { // if finds video game
-          mediaElements.pop_back();
-	      cout << elementTitle << " Has Been Deleted" << endl;
+	delete &(mediaElements.at(i));
+	mediaElements.pop_back();
+        cout << elementTitle << " Has Been Deleted" << endl;
       }
       else { // if cant find video game
 	      cout << "This Video Game Was Never Inputted!" << endl;
