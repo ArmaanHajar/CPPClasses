@@ -208,10 +208,11 @@ void searchElement(vector<Media*> &mediaElements) {
     // goes through mediaElements vector looking for inputted title
     for (int i = 0; i < mediaElements.size(); i++) {
       if (strcmp((mediaElements.at(i)->title), elementTitle) == 0) { // if finds song
-	mediaElements.at(i)->print();
+	      cout << "---------------------------------------------------------" << endl;  
+        mediaElements.at(i)->print();
       }
       else { // if cant find song
-	cout << "This Song Was Never Inputted!" << endl;
+	      cout << "This Song Was Never Inputted!" << endl;
       }
     }  
   }
@@ -225,10 +226,11 @@ void searchElement(vector<Media*> &mediaElements) {
     // goes through mediaElements vector looking for inputted title
     for (int i = 0; i < mediaElements.size(); i++) {
       if (strcmp((mediaElements.at(i)->title), elementTitle) == 0) { // if finds movie
-	mediaElements.at(i)->print();
+      	cout << "---------------------------------------------------------" << endl;
+        mediaElements.at(i)->print();
       }
       else { // if cant find movie
-	cout << "This Movie Was Never Inputted!" << endl;
+      	cout << "This Movie Was Never Inputted!" << endl;
       }
     }
   }
@@ -242,10 +244,11 @@ void searchElement(vector<Media*> &mediaElements) {
     // goes through mediaElements vector looking for inputted title
     for (int i = 0; i < mediaElements.size(); i++) {
       if (strcmp((mediaElements.at(i)->title), elementTitle) == 0) { // if finds video game
-	mediaElements.at(i)->print();
+        cout << "---------------------------------------------------------" << endl;
+      	mediaElements.at(i)->print();
       }
       else { // if cant find video game
-	cout << "This Video Game Was Never Inputted!" << endl;
+	      cout << "This Video Game Was Never Inputted!" << endl;
       }
     }
   }
@@ -269,11 +272,12 @@ void deleteElement(vector<Media*> &mediaElements) {
     // goes through mediaElements vector looking for inputted title
     for (int i = 0; i < mediaElements.size(); i++) {
       if (strcmp((mediaElements.at(i)->title), elementTitle) == 0) { // if finds music
-	mediaElements.pop_back();
-	cout << elementTitle << " Has Been Deleted" << endl;
+        mediaElements.pop_back();
+        delete &mediaElements.at(i);
+        cout << elementTitle << " Has Been Deleted" << endl;
       }
       else { // if cant find music
-	cout << "This Song Was Never Inputted!" << endl;
+	      cout << "This Song Was Never Inputted!" << endl;
       }
     }  
   }
@@ -287,11 +291,11 @@ void deleteElement(vector<Media*> &mediaElements) {
     // goes through mediaElements vector looking for inputted title
     for (int i = 0; i < mediaElements.size(); i++) {
       if (strcmp((mediaElements.at(i)->title), elementTitle) == 0) { // if finds movie
-	mediaElements.pop_back();
-	cout << elementTitle << " Has Been Deleted" << endl;
+        mediaElements.pop_back();
+        cout << elementTitle << " Has Been Deleted" << endl;
       }
       else { // if cant find movie
-	cout << "This Movie Was Never Inputted!" << endl;
+	      cout << "This Movie Was Never Inputted!" << endl;
       }
     }
   }
@@ -305,11 +309,11 @@ void deleteElement(vector<Media*> &mediaElements) {
     // goes through mediaElements vector looking for inputted title
     for (int i = 0; i < mediaElements.size(); i++) {
       if (strcmp((mediaElements.at(i)->title), elementTitle) == 0) { // if finds video game
-	mediaElements.pop_back();
-	cout << elementTitle << " Has Been Deleted" << endl;
+          mediaElements.pop_back();
+	      cout << elementTitle << " Has Been Deleted" << endl;
       }
       else { // if cant find video game
-	cout << "This Video Game Was Never Inputted!" << endl;
+	      cout << "This Video Game Was Never Inputted!" << endl;
       }
     }
   }
